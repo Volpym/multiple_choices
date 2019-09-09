@@ -7,6 +7,11 @@ def rgb_to_hex(rgb):
     print(rgb)
     heximal = Color.from_string(rgb).hex
     return heximal; 
+def isCorrect(color):
+    if (color =='#00ff00'):
+        correct_answer=answer_text[i]
+        return(correct_answer)
+    
  
 # creates an firefox browser instance
 driver = webdriver.Firefox(executable_path="C:\\Users\\jedic\\Desktop\\diktia til\\geckodriver.exe")
@@ -45,10 +50,8 @@ for j in range (99):
             answer_text.append(driver.find_element_by_css_selector(answer_selector+answer_div).text)
             #gets first answer's background color in rgb and transforms it in hex
             color = rgb_to_hex(driver.find_element_by_css_selector(answer_selector+bc_div).value_of_css_property('background-color'))
-            print(color)
-            if (color =='#00ff00'):
-                correct_answer=answer_text[i]
-                print("correct answer: ",correct_answer)
+            correct_answer=isCorrect(color)
+            
         except NoSuchElementException as exception:
             print("doesn't exist")   
 
