@@ -67,7 +67,7 @@ for j in range (99):
     cursor.execute(query)
     driver.find_element_by_css_selector('#myCanvasBtn > div:nth-child(1)').click()
     
-
+#just checking
  
 
 connection.commit()
